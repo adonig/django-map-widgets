@@ -71,6 +71,8 @@ class GooglePointFieldWidget(BasePointFieldMapWidget):
         }
 
         js = [
+            minify_if_not_debug("admin/js/vendor/jquery/jquery{}.js"),
+            "admin/js/jquery.init.js",
             "https://code.jquery.com/jquery-3.3.1.slim.min.js",
             "https://maps.googleapis.com/maps/api/js?libraries=places&language={}&key={}".format(
                 mw_settings.LANGUAGE, mw_settings.GOOGLE_MAP_API_KEY
